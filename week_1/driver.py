@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from quicksort_random_pivot import quicksort_random_pivot
 from quicksort_perfect_pivot import quicksort_perfect_pivot
 from random import shuffle, randint
