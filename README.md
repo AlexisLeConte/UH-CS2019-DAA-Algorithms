@@ -4,15 +4,7 @@ This repository contains some algorithms I have implemented as part of the DAA c
 
 ## Week 1 Implementation Exercises
 
-### Quicksort with random pivot
-
-
-
-### Quicksort with perfect pivot
-
-
-
-### Bruteforce matrix multiplication
-
-
+- Quicksort with random pivot
+- Quicksort with perfect pivot
+- Bruteforce matrix multiplication
 
