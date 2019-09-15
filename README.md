@@ -8,3 +8,9 @@ This repository contains some algorithms I have implemented as part of the DAA c
 - Quicksort with perfect pivot
 - Bruteforce matrix multiplication
 
+## Week 2 Implementation Exercices
+
+- Divide and Conquer matrix multiplication
+- Board tiling
+- K-way merge
+
