@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from random import randint
+
 def merge(a, b):
     """Merge 2 sorted arrays a and b into a single sorted array."""
 
@@ -31,3 +33,6 @@ def kway_merge(arrays):
     merged_l = kway_merge(arrays[:len(arrays) // 2])
     merged_r = kway_merge(arrays[len(arrays) // 2:])
     return merge(merged_l, merged_r)
+
+arrays = [sorted([randint(0, 100) for i in range(100)]) for j in range (2**4)]
+print(kway_merge(arrays))

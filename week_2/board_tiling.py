@@ -45,3 +45,6 @@ def board_tiling(size, tile_x, tile_y):
     board[tile_x][tile_y] = 0
     _board_tiling(board, 0, 0, len(board), tile_x, tile_y, 1)
     return board
+
+for line in board_tiling(8, 1, 2):
+    print(line)

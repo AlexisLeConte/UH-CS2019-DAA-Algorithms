@@ -14,3 +14,9 @@ This repository contains some algorithms I have implemented as part of the DAA c
 - Board tiling
 - K-way merge
 
+## Week 3 Implementation Exercices
+
+- Reverse engineering: Finding the minimum for all subarrays in O(n*log(n)) time
+- Optimal order to multiply matrices
+- DAG topological sorting
+
