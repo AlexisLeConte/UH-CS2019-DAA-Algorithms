@@ -20,3 +20,9 @@ This repository contains some algorithms I have implemented as part of the DAA c
 - Optimal order to multiply matrices
 - DAG topological sorting
 
+## Week 4 Implementation Exercices
+
+- Maximum bottleneck between two nodes in a DAG
+- Longuest Increasing Subsequence
+- Optimal Compression Partitioning
+
