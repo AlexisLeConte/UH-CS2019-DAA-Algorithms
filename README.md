@@ -26,3 +26,7 @@ This repository contains some algorithms I have implemented as part of the DAA c
 - Longuest Increasing Subsequence
 - Optimal Compression Partitioning
 
+## Week 5 Implementation Exercices
+
+- Knapsack Memoization Memory Optimization
+
