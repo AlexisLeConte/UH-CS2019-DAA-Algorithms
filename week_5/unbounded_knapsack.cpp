@@ -38,40 +38,25 @@ int32_t vector_knapsack(vector<item_t> const& itemset, int32_t weight)
     return memo[weight];
 }
 
-int32_t map_knapsack(vector<item_t> const& itemset, int32_t weight)
+int32_t map_knapsack(vector<item_t> const& itemset, int32_t weight, map<int32_t, int32_t>& memo)
 {
-    map<int32_t, int32_t> memo;
-    memo[0] = 0;
-    int32_t start_weight = itemset[0].weight;
+    if(weight <= 0)
+    {
+        return 0;
+    }
+    if(memo.find(weight) != memo.end())
+    {
+        return memo[weight];
+    }
+    int32_t max_value = 0;
     for(item_t const& item : itemset)
     {
-        start_weight = min(start_weight, item.weight);
-    }
-    for(int32_t i=start_weight; i<=weight; ++i)
-    {
-        int32_t knapsack_value = 0;
-        for(item_t const& item : itemset)
+        if(weight - item.weight >= 0)
         {
-            if(i - item.weight >= 0)
-            {
-                auto it = memo.find(i - item.weight);
-                if(it != memo.end())
-                {
-                    knapsack_value = max(knapsack_value, it->second + item.value);
-                }
-            }
-        }
-        if(knapsack_value)
-        {
-            memo[i] = knapsack_value;
+            max_value = max(max_value, map_knapsack(itemset, weight - item.weight, memo) + item.value);
         }
     }
-    int32_t max_knapsack_value = 0;
-    for(auto const& p : memo)
-    {
-        max_knapsack_value = max(max_knapsack_value, p.second);
-    }
-    return max_knapsack_value;
+    return memo[weight] = max_value;
 }
 
 int main()
@@ -93,7 +78,8 @@ int main()
     cout << chrono::duration_cast<chrono::milliseconds>(end-start).count() << "ms" << endl;
 
     start = chrono::system_clock::now();
-    cout << "map table: " << map_knapsack(itemset, weight) << " in ";
+    map<int32_t, int32_t> memo;
+    cout << "map table: " << map_knapsack(itemset, weight, memo) << " in ";
     end = chrono::system_clock::now();
     cout << chrono::duration_cast<chrono::milliseconds>(end-start).count() << "ms" << endl;
     return 0;
